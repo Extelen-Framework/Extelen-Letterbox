@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using Extelen.Utilities.Animation;
 
 namespace Extelen.UI {
 
@@ -24,7 +23,13 @@ namespace Extelen.UI {
 
 			[Header("Letterbox Animation")]
 			[SerializeField] private bool m_unscaledTime = true;
-			[SerializeField] private AnimationCurve m_activationSmoothness = DefaultCurves.SmoothInOut;
+			[SerializeField] private AnimationCurve m_activationSmoothness = 
+				new AnimationCurve(new Keyframe[2] {
+
+				new Keyframe(0, 0),
+				new Keyframe(1, 1),
+				});
+			
 			[SerializeField] private float m_activationTime = 0.25f;
 
 			public float AspectRatio {
@@ -135,8 +140,11 @@ namespace Extelen.UI {
 					if (m_bottomBarRect != null) m_bottomBarRect.localScale = m_scale;
 					}
 
-				private void RunRoutine(bool active) => CoroutineUtilites.OverwriteRoutine(LetterboxRoutine(active), ref m_letterboxRoutine, this);
-				
+				private void RunRoutine(bool active) {
+					
+					if (m_letterboxRoutine != null) StopCoroutine(m_letterboxRoutine);
+					m_letterboxRoutine = StartCoroutine(LetterboxRoutine(active));
+					}	
 
 		//Coroutines
 		private IEnumerator LetterboxRoutine(bool active) {
