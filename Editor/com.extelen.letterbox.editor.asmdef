@@ -1,0 +1,16 @@
+{
+    "name": "com.extelen.letterbox.editor",
+    "rootNamespace": "",
+    "references": [
+        "GUID:661405db1f3ac6c46b48e11b6d7c25a3"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

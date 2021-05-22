@@ -1,0 +1,16 @@
+{
+    "name": "com.extelen.letterbox",
+    "rootNamespace": "",
+    "references": [
+        "GUID:6ee74d5f0ec3145458eb657ea9df368c"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

@@ -1,0 +1,15 @@
+{
+  "name": "com.extelen.letterbox",
+  "version": "1.0.0",
+  "displayName": "Extelen Letterbox",
+  "description": "This package gives you the possibility to create letterbox in the UI using the cinematographic standard size (21/9).",
+  "unity": "2020.3", 
+  "dependencies": {
+      "com.extelen.utilities": "https://github.com/Extelen-Framework/Extelen-Utilities.git"
+  },
+  "keywords": ["ui", "library", "letterbox"],
+  "author": {
+      "name": "Rodrigo Saguer",
+      "email": "extelendev@gmail.com"
+  }
+}
