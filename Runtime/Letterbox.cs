@@ -120,6 +120,7 @@ namespace Extelen.UI {
 				public void ActiveLetterbox() => SetLetterboxActive(true);
 				public void DeactiveLetterbox() => SetLetterboxActive(false);
 				public void ToggleLetterbox() => SetLetterboxActive(!m_letterboxActive);
+				public void ToggleLetterbox(bool overwrite) => SetLetterboxActive(!m_letterboxActive, overwrite);
 					
 				public void SetLetterboxActive(bool active) => SetLetterboxActive(active, false);
 				public void SetLetterboxActive(bool active, bool overwrite) {
@@ -127,13 +128,14 @@ namespace Extelen.UI {
 					if (m_letterboxActive == active && !overwrite) return;
 					m_letterboxActive = active;
 
-					if (active) ActiveLetterbox();
-					else DeactiveLetterbox();
+					if (active) RunRoutine(true);
+					else RunRoutine(false);
 					}
 
 				private void UpdateBarScale(float value) {
 					
 					value = Mathf.Clamp01(value);
+					m_letterboxValue = value;
 
 					Vector3 m_scale = new Vector3(1, value, 1);
 					if (m_topBarRect != null) m_topBarRect.localScale = m_scale;
